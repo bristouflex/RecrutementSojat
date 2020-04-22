@@ -1,18 +1,16 @@
-import Base from "./Base";
+import ValueObjectID from "./ValueObjectID";
 
-import Créneau from "./Créneau";
+import Creneau from "./Creneau";
 import Recruteur from "./Recruteur";
 import Candidat from "./Candidat";
 
 export enum Status {
-    RendezVousPris,
-    Négociation,
-    CandidatureAcceptée,
-    Embauché,
-    Refusé
+    Plannifie,
+    Confirme,
+    Annule
 };
 
-export default class Entretien extends Base {
+export default class Entretien extends ValueObjectID {
     private _raisonAnnulation?: string;
 
     get status(): Status {
@@ -25,7 +23,7 @@ export default class Entretien extends Base {
 
     constructor(
         private _status: Status,
-        public readonly créneau: Créneau,
+        public readonly creneau: Creneau,
         public readonly recruteur: Recruteur,
         public readonly candidat: Candidat
     ) {
@@ -33,7 +31,7 @@ export default class Entretien extends Base {
     }
 
     public confirmer() {
-        this._status = Status.RendezVousPris;
+        this._status = Status.Confirme;
     }
 
     public annuler(raison: string) {

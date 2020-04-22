@@ -1,8 +1,8 @@
-import Base from "./Base";
+import ValueObjectID from "./ValueObjectID";
 
-export default class Recruteur extends Base {
+export default class Recruteur extends ValueObjectID {
     constructor(
-        public readonly prénom: string,
+        public readonly prenom: string,
         public readonly nom: string
     ) {
         super();

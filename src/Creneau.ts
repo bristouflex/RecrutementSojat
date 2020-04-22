@@ -1,6 +1,6 @@
-import Base from "./Base";
+import ValueObjectID from "./ValueObjectID";
 
-export default class Créneau extends Base {
+export default class Creneau extends ValueObjectID {
     public readonly date: Date;
     public readonly heureDébut: number;
     public readonly heureFin: number;
@@ -10,12 +10,12 @@ export default class Créneau extends Base {
 
     /**
      * @param dateTime 
-     * @param durée en minute
+     * @param duree en minute
      */
-    constructor(dateTime: Date, durée: number) {
-        if (durée <= 10) {
+    constructor(dateTime: Date, duree: number) {
+        if (duree <= 10) {
             throw new Error("Une réunion ne peut être inférieure à 10 minutes");
-        } else if (durée > Créneau.HUIT_HEURES) {
+        } else if (duree > Creneau.HUIT_HEURES) {
             throw new Error("Une réunion est limitée à 8h");
         }
 
@@ -23,10 +23,10 @@ export default class Créneau extends Base {
 
         this.date = new Date(dateTime.getFullYear(), dateTime.getMonth(), dateTime.getDate());
         this.heureDébut = dateTime.getTime() - this.date.getTime();
-        this.heureFin = this.heureDébut + durée * Créneau.UNE_HEURE_EN_MILLISECONDES;
+        this.heureFin = this.heureDébut + duree * Creneau.UNE_HEURE_EN_MILLISECONDES;
     }
 
-    public equals(créneau: Créneau): boolean {
-        return this.date.getTime() === créneau.date.getTime();
+    public equals(creneau: Creneau): boolean {
+        return this.date.getTime() === creneau.date.getTime();
     }
 }

@@ -1,8 +1,8 @@
-import Base from "./Base";
+import Base from "./ValueObjectID";
 
 export default class Candidat extends Base {
     constructor(
-        public readonly prénom: string,
+        public readonly prenom: string,
         public readonly nom: string
     ) {
         super();
