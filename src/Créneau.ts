@@ -6,6 +6,7 @@ export default class Créneau extends Base {
     public readonly heureFin: number;
 
     public static HUIT_HEURES: number = 480;
+    public static UNE_HEURE_EN_MILLISECONDES: number = 60_000;
 
     /**
      * @param dateTime 
@@ -22,7 +23,7 @@ export default class Créneau extends Base {
 
         this.date = new Date(dateTime.getFullYear(), dateTime.getMonth(), dateTime.getDate());
         this.heureDébut = dateTime.getTime() - this.date.getTime();
-        this.heureFin = this.heureDébut + durée * 60_000;
+        this.heureFin = this.heureDébut + durée * Créneau.UNE_HEURE_EN_MILLISECONDES;
     }
 
     public equals(créneau: Créneau): boolean {
