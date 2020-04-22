@@ -1,4 +1,4 @@
-import { v5 as uuidv5 } from "uuid";
+import Base from "./Base";
 
 import Créneau from "./Créneau";
 import Recruteur from "./Recruteur";
@@ -12,8 +12,7 @@ export enum Status {
     Refusé
 };
 
-export default class Entretien {
-    public readonly entretienId;
+export default class Entretien extends Base {
     private _raisonAnnulation?: string;
 
     get status(): Status {
@@ -30,7 +29,7 @@ export default class Entretien {
         public readonly recruteur: Recruteur,
         public readonly candidat: Candidat
     ) {
-        this.entretienId = uuidv5(Math.random().toString(), uuidv5.DNS);
+        super();
     }
 
     public confirmer() {

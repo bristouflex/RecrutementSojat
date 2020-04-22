@@ -1,4 +1,6 @@
-export default class Créneau {
+import Base from "./Base";
+
+export default class Créneau extends Base {
     public readonly date: Date;
     public readonly heureDébut: number;
     public readonly heureFin: number;
@@ -15,6 +17,8 @@ export default class Créneau {
         } else if (durée > Créneau.HUIT_HEURES) {
             throw new Error("Une réunion est limitée à 8h");
         }
+
+        super();
 
         this.date = new Date(dateTime.getFullYear(), dateTime.getMonth(), dateTime.getDate());
         this.heureDébut = dateTime.getTime() - this.date.getTime();

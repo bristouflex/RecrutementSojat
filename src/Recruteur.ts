@@ -1,12 +1,10 @@
-import { v5 as uuidv5 } from "uuid";
+import Base from "./Base";
 
-export default class Recruteur {
-    public readonly recruteurId;
-
+export default class Recruteur extends Base {
     constructor(
         public readonly prénom: string,
         public readonly nom: string
     ) {
-        this.recruteurId = uuidv5(Math.random().toString(), uuidv5.DNS);
+        super();
     }
 }
