@@ -3,6 +3,8 @@ export default class Créneau {
     public readonly heureDébut: number;
     public readonly heureFin: number;
 
+    public static HUIT_HEURES: number = 480;
+
     /**
      * @param dateTime 
      * @param durée en minute
@@ -10,7 +12,7 @@ export default class Créneau {
     constructor(dateTime: Date, durée: number) {
         if (durée <= 10) {
             throw new Error("Une réunion ne peut être inférieure à 10 minutes");
-        } else if (durée > 480) {
+        } else if (durée > Créneau.HUIT_HEURES) {
             throw new Error("Une réunion est limitée à 8h");
         }
 
