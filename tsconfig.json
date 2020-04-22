@@ -16,7 +16,6 @@
         "module": "commonjs",
         "moduleResolution": "node",
         "resolveJsonModule": true,
-        "isolatedModules": true,
         "noEmit": true,
         "jsx": "preserve",
         "baseUrl": "./src",
@@ -26,6 +25,9 @@
         }
     },
     "include": [
-        "src"
+        "src", "tests/Creneau.specs.ts"
+    ],
+    "exclude": [
+        "node_modules"
     ]
 }
