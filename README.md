@@ -1,5 +1,7 @@
-# RecrutementSojat
+# RecrutementSoat - GROUPE 7
 
-Pour installer les dépendances, faire : npm install  
+## ADANI Marcel, DELEE Alexis, HOUNZA Brice, KEMISSI Neal
 
-Pour lancer les tests, faire : npm test  
+Pour installer les dépendances (la première fois) : `npm install`
+
+Pour lancer les tests : `npm test`
