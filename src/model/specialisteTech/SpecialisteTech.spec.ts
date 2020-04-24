@@ -1,6 +1,5 @@
-import SpecialisteTech, {
-    Competence,
-  } from "./SpecialisteTech";
+import SpecialisteTech from "./SpecialisteTech";
+import { Competence } from 'model/Competence';
 
 describe("test sur les spécialistes tech", () => {
 
@@ -11,6 +10,6 @@ describe("test sur les spécialistes tech", () => {
         expect(createSpecialiste).toThrow(Error)
     });
 
-    
+
 
 });
