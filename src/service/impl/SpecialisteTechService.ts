@@ -2,15 +2,18 @@ import SpecialisteTech, {
   Competence,
 } from "model/specialisteTech/SpecialisteTech";
 import Creneau from "Creneau";
+import SpecialisteTechRepository from "repository/SpecialisteTechRepository";
 
-export default class SpecialisteTechRepository {
+export default class SpecialisteTechServiceImpl {
+  constructor(public specialisteTechRepository: SpecialisteTechRepository) {}
+
   /**
    * Retourne tout les recruteurs technique
    * @param crenea
    * @returns SpecialisteTech[]
    */
   public findAll(): SpecialisteTech[] | undefined {
-    return;
+    return this.specialisteTechRepository.findAll();
   }
 
   /**
@@ -19,7 +22,7 @@ export default class SpecialisteTechRepository {
    * @returns SpecialisteTech
    */
   public finById(id: number): SpecialisteTech | undefined {
-    return;
+    return this.specialisteTechRepository.finById(id);
   }
 
   /**
@@ -29,7 +32,7 @@ export default class SpecialisteTechRepository {
    * @returns SpecialisteTech[]
    */
   public findAllAvailable(creneau: Creneau): SpecialisteTech[] | undefined {
-    return;
+    return this.specialisteTechRepository.findAllAvailable(creneau);
   }
 
   /**
@@ -42,18 +45,25 @@ export default class SpecialisteTechRepository {
     creneau: Creneau,
     competences: Competence[]
   ): SpecialisteTech[] | undefined {
-    return;
+    return this.specialisteTechRepository.findAvailableByCompetences(
+      creneau,
+      competences
+    );
   }
 
   /**
    * Met à jour un recruteur
    * @param specialisteTech
    */
-  public update(specialisteTech: SpecialisteTech): void {}
+  public update(specialisteTech: SpecialisteTech): void {
+    this.specialisteTechRepository.update(specialisteTech);
+  }
 
   /**
    * Suppression d'un recruteur
    * @param id
    */
-  public deleteById(id: number): void {}
+  public deleteById(id: number): void {
+    this.specialisteTechRepository.deleteById(id);
+  }
 }

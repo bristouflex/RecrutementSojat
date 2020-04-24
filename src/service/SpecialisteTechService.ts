@@ -3,24 +3,20 @@ import SpecialisteTech, {
 } from "model/specialisteTech/SpecialisteTech";
 import Creneau from "Creneau";
 
-export default class SpecialisteTechRepository {
+export interface ISpecialisteTechService {
   /**
    * Retourne tout les recruteurs technique
    * @param crenea
    * @returns SpecialisteTech[]
    */
-  public findAll(): SpecialisteTech[] | undefined {
-    return;
-  }
+  findAll(): SpecialisteTech[] | undefined;
 
   /**
    * Retourne un recruteur en fonction de son id
    * @param id
    * @returns SpecialisteTech
    */
-  public finById(id: number): SpecialisteTech | undefined {
-    return;
-  }
+  finById(id: number): SpecialisteTech | undefined;
 
   /**
    * Retourne tout les recruteurs technique disponnible
@@ -28,9 +24,7 @@ export default class SpecialisteTechRepository {
    * @param crenea
    * @returns SpecialisteTech[]
    */
-  public findAllAvailable(creneau: Creneau): SpecialisteTech[] | undefined {
-    return;
-  }
+  findAllAvailable(creneau: Creneau): SpecialisteTech[] | undefined;
 
   /**
    * Retourne tout les recruteurs technique disponnible
@@ -38,22 +32,20 @@ export default class SpecialisteTechRepository {
    * @param crenea
    * @returns SpecialisteTech[]
    */
-  public findAvailableByCompetences(
+  findAvailableByCompetences(
     creneau: Creneau,
     competences: Competence[]
-  ): SpecialisteTech[] | undefined {
-    return;
-  }
+  ): SpecialisteTech[] | undefined;
 
   /**
    * Met à jour un recruteur
    * @param specialisteTech
    */
-  public update(specialisteTech: SpecialisteTech): void {}
+  update(specialisteTech: SpecialisteTech): void;
 
   /**
    * Suppression d'un recruteur
    * @param id
    */
-  public deleteById(id: number): void {}
+  deleteById(id: number): void;
 }
