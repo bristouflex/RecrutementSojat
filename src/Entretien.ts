@@ -28,7 +28,11 @@ export default class Entretien extends ValueObjectID {
     public readonly candidat: Candidat,
     public readonly competence: Competence
   ) {
-    super();
+      super()
+      if(!specialisteTech.competences.includes(competence)){
+        throw new Error("Le spécialiste ne peut pas mener l'entretien")
+      }
+      
   }
 
   public confirmer() {
