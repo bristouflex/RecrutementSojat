@@ -9,4 +9,8 @@ export default class Candidat extends Base {
   ) {
     super();
   }
+
+  public equals(candidat: Candidat): boolean {
+    return this.objectID === candidat.objectID;
+  }
 }
