@@ -2,14 +2,15 @@ import SpecialisteTech, {
   Competence,
 } from "../model/specialisteTech/SpecialisteTech";
 import Creneau from "../model/rendezVous/Creneau";
+import { ISpecialisteTech } from "../repository/ISpecialisteTech";
 
-export default class SpecialisteTechRepository {
+export default class SpecialisteTechRepository implements ISpecialisteTech {
   /**
    * Retourne tout les recruteurs technique
    * @returns SpecialisteTech[]
    */
-  public findAll(): SpecialisteTech[] | undefined {
-    return;
+  public findAll(): SpecialisteTech[] {
+    return new Array<SpecialisteTech>();
   }
 
   /**
@@ -17,8 +18,8 @@ export default class SpecialisteTechRepository {
    * @param id
    * @returns SpecialisteTech
    */
-  public finById(id: number): SpecialisteTech | undefined {
-    return;
+  public finById(id: number): SpecialisteTech {
+    return new SpecialisteTech("nom", "prenom", [Competence.JS]);
   }
 
   /**
@@ -27,8 +28,8 @@ export default class SpecialisteTechRepository {
    * @param creneau
    * @returns SpecialisteTech[]
    */
-  public findAllAvailable(creneau: Creneau): SpecialisteTech[] | undefined {
-    return;
+  public findAllAvailable(creneau: Creneau): SpecialisteTech[] {
+    return new Array<SpecialisteTech>();
   }
 
   /**
@@ -40,8 +41,8 @@ export default class SpecialisteTechRepository {
   public findAvailableByCompetences(
     creneau: Creneau,
     competences: Competence[]
-  ): SpecialisteTech[] | undefined {
-    return;
+  ): SpecialisteTech[] {
+    return new Array<SpecialisteTech>();
   }
 
   /**

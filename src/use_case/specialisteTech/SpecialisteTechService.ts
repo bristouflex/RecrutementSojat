@@ -1,19 +1,17 @@
 import SpecialisteTech, {
   Competence,
-} from "model/specialisteTech/SpecialisteTech";
-import SpecialisteTechRepository from "repository/SpecialisteTechRepository";
-import { ISpecialisteTechService } from "service/SpecialisteTechService";
-import Creneau from "model/rendezVous/Creneau";
+} from "../../model/specialisteTech/SpecialisteTech";
+import SpecialisteTechRepository from "../../infrastructure/SpecialisteTechRepository";
+import Creneau from "../../model/rendezVous/Creneau";
 
-export default class SpecialisteTechServiceImpl
-  implements ISpecialisteTechService {
+export default class SpecialisteTechService {
   constructor(public specialisteTechRepository: SpecialisteTechRepository) {}
 
   /**
    * Retourne tout les recruteurs technique
    * @returns SpecialisteTech[]
    */
-  public findAll(): SpecialisteTech[] | undefined {
+  public findAll(): SpecialisteTech[] {
     return this.specialisteTechRepository.findAll();
   }
 
@@ -22,7 +20,7 @@ export default class SpecialisteTechServiceImpl
    * @param id
    * @returns SpecialisteTech
    */
-  public finById(id: number): SpecialisteTech | undefined {
+  public finById(id: number): SpecialisteTech {
     return this.specialisteTechRepository.finById(id);
   }
 
@@ -32,7 +30,7 @@ export default class SpecialisteTechServiceImpl
    * @param creneau
    * @returns SpecialisteTech[]
    */
-  public findAllAvailable(creneau: Creneau): SpecialisteTech[] | undefined {
+  public findAllAvailable(creneau: Creneau): SpecialisteTech[] {
     return this.specialisteTechRepository.findAllAvailable(creneau);
   }
 
@@ -45,7 +43,7 @@ export default class SpecialisteTechServiceImpl
   public findAvailableByCompetences(
     creneau: Creneau,
     competences: Competence[]
-  ): SpecialisteTech[] | undefined {
+  ): SpecialisteTech[] {
     return this.specialisteTechRepository.findAvailableByCompetences(
       creneau,
       competences
