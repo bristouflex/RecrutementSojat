@@ -1,18 +1,18 @@
 import SpecialisteTech, {
   Competence,
 } from "../../model/specialisteTech/SpecialisteTech";
-import SpecialisteTechRepository from "../../infrastructure/SpecialisteTechRepository";
 import Creneau from "../../model/rendezVous/Creneau";
+import { ISpecialisteTechRepository } from "../../repository/ISpecialisteTechRepository";
 
 export default class SpecialisteTechService {
-  constructor(public specialisteTechRepository: SpecialisteTechRepository) {}
+  constructor(public IspecialisteTechRepository: ISpecialisteTechRepository) {}
 
   /**
    * Retourne tout les recruteurs technique
    * @returns SpecialisteTech[]
    */
   public findAll(): SpecialisteTech[] {
-    return this.specialisteTechRepository.findAll();
+    return this.IspecialisteTechRepository.findAll();
   }
 
   /**
@@ -20,8 +20,8 @@ export default class SpecialisteTechService {
    * @param id
    * @returns SpecialisteTech
    */
-  public finById(id: number): SpecialisteTech {
-    return this.specialisteTechRepository.finById(id);
+  public findById(id: number): SpecialisteTech {
+    return this.IspecialisteTechRepository.finById(id);
   }
 
   /**
@@ -31,7 +31,7 @@ export default class SpecialisteTechService {
    * @returns SpecialisteTech[]
    */
   public findAllAvailable(creneau: Creneau): SpecialisteTech[] {
-    return this.specialisteTechRepository.findAllAvailable(creneau);
+    return this.IspecialisteTechRepository.findAllAvailable(creneau);
   }
 
   /**
@@ -44,7 +44,7 @@ export default class SpecialisteTechService {
     creneau: Creneau,
     competences: Competence[]
   ): SpecialisteTech[] {
-    return this.specialisteTechRepository.findAvailableByCompetences(
+    return this.IspecialisteTechRepository.findAvailableByCompetences(
       creneau,
       competences
     );
@@ -55,7 +55,7 @@ export default class SpecialisteTechService {
    * @param specialisteTech
    */
   public update(specialisteTech: SpecialisteTech): void {
-    this.specialisteTechRepository.update(specialisteTech);
+    this.IspecialisteTechRepository.update(specialisteTech);
   }
 
   /**
@@ -63,6 +63,6 @@ export default class SpecialisteTechService {
    * @param id
    */
   public deleteById(id: number): void {
-    this.specialisteTechRepository.deleteById(id);
+    this.IspecialisteTechRepository.deleteById(id);
   }
 }

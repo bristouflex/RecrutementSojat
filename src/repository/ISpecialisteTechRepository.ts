@@ -3,7 +3,7 @@ import SpecialisteTech, {
 } from "../model/specialisteTech/SpecialisteTech";
 import Creneau from "../model/rendezVous/Creneau";
 
-export interface ISpecialisteTech {
+export interface ISpecialisteTechRepository {
   /**
    * Retourne tout les recruteurs technique
    * @returns SpecialisteTech[]

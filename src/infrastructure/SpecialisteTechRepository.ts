@@ -2,9 +2,10 @@ import SpecialisteTech, {
   Competence,
 } from "../model/specialisteTech/SpecialisteTech";
 import Creneau from "../model/rendezVous/Creneau";
-import { ISpecialisteTech } from "../repository/ISpecialisteTech";
+import { ISpecialisteTechRepository } from "../repository/ISpecialisteTechRepository";
 
-export default class SpecialisteTechRepository implements ISpecialisteTech {
+export default class SpecialisteTechRepository
+  implements ISpecialisteTechRepository {
   /**
    * Retourne tout les recruteurs technique
    * @returns SpecialisteTech[]
