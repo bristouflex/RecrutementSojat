@@ -1,7 +1,7 @@
 import ValueObjectID from "./model/ValueObjectID";
 
 import Creneau from "./Creneau";
-import SpecialisteTech from "./model/specialisteTech/SpecialisteTech";
+import SpecialisteTech, { Competence } from "./model/specialisteTech/SpecialisteTech";
 import Candidat from "./model/candidat/Candidat";
 
 export enum Status {
@@ -25,7 +25,8 @@ export default class Entretien extends ValueObjectID {
     private _status: Status,
     public readonly creneau: Creneau,
     public readonly specialisteTech: SpecialisteTech,
-    public readonly candidat: Candidat
+    public readonly candidat: Candidat,
+    public readonly competence: Competence
   ) {
     super();
   }
@@ -35,6 +36,9 @@ export default class Entretien extends ValueObjectID {
   }
 
   public annuler(raison: string) {
+    this._status = Status.Annule
     this._raisonAnnulation = raison;
   }
+
+
 }

@@ -27,7 +27,6 @@ export default class Creneau extends ValueObjectID {
     } else if (dateTime.getHours() < 18) {
       throw new RangeError("Un créneau doit commencer à 18h minimum");
     } else if (dateTime.getTime() - dateMinuit.getTime() + duree * Creneau.UNE_MINUTE_EN_MILLISECONDES > 21 * Creneau.UNE_HEURE_EN_MILLISECONDES){
-      console.log(dateTime.getTime() - dateMinuit.getTime() + duree * Creneau.UNE_MINUTE_EN_MILLISECONDES, 21 * Creneau.UNE_HEURE_EN_MILLISECONDES)
       throw new RangeError("Un créneau doit finir à 21h maximum");
     }
 
@@ -37,7 +36,6 @@ export default class Creneau extends ValueObjectID {
     this.heureDébut = dateTime.getTime() - this.date.getTime();
     this.heureFin =
       this.heureDébut + duree * Creneau.UNE_MINUTE_EN_MILLISECONDES;
-    console.log(this.heureFin)
     
   }
 
