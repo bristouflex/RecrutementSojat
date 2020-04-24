@@ -3,8 +3,10 @@ import SpecialisteTech, {
 } from "model/specialisteTech/SpecialisteTech";
 import Creneau from "Creneau";
 import SpecialisteTechRepository from "repository/SpecialisteTechRepository";
+import { ISpecialisteTechService } from "service/SpecialisteTechService";
 
-export default class SpecialisteTechServiceImpl {
+export default class SpecialisteTechServiceImpl
+  implements ISpecialisteTechService {
   constructor(public specialisteTechRepository: SpecialisteTechRepository) {}
 
   /**
