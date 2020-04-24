@@ -10,7 +10,7 @@ describe("test sur les entretiens", () => {
     let entretien = new Entretien(
       Status.Plannifie,
       new Creneau(new Date(2020, 1, 1, 18), 60),
-      new SpecialisteTech("Alexis", "Delee", [Competence.JS], 5),
+      new SpecialisteTech("Alexis", "Delee", [Competence.JS], 10),
       new Candidat("Bob", "Dylan", new CV(new Blob()), [Competence.JS]),
       Competence.JS
     );
@@ -23,7 +23,7 @@ describe("test sur les entretiens", () => {
       let entretien = new Entretien(
         Status.Plannifie,
         new Creneau(new Date(2020, 1, 1, 18), 60),
-        new SpecialisteTech("Alexis", "Delee", [Competence.DotNet], 6),
+        new SpecialisteTech("Alexis", "Delee", [Competence.DotNet], 10),
         new Candidat("Bob", "Dylan", new CV(new Blob()), [Competence.DotNet]),
         Competence.JS
       );

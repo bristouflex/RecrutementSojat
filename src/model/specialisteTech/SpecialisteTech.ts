@@ -16,8 +16,9 @@ export default class SpecialisteTech extends ValueObjectID {
     public readonly anneesExperiences: number
   ) {
     super();
-    if(anneesExperiences < SpecialisteTech.NOMBRE_MIN_EXPERIENCE) throw new Error("Pas assez d'expérience pour être un spécialiste");
-  } 
+    if (anneesExperiences < SpecialisteTech.NOMBRE_MIN_EXPERIENCE)
+      throw new Error("Pas assez d'expérience pour être un spécialiste");
+  }
 
   public equals(specialisteTech: SpecialisteTech): boolean {
     return this.objectID === specialisteTech.objectID;
