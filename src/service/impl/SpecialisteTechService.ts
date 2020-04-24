@@ -1,9 +1,9 @@
 import SpecialisteTech, {
   Competence,
 } from "model/specialisteTech/SpecialisteTech";
-import Creneau from "Creneau";
 import SpecialisteTechRepository from "repository/SpecialisteTechRepository";
 import { ISpecialisteTechService } from "service/SpecialisteTechService";
+import Creneau from "model/rendezVous/Creneau";
 
 export default class SpecialisteTechServiceImpl
   implements ISpecialisteTechService {
@@ -11,7 +11,6 @@ export default class SpecialisteTechServiceImpl
 
   /**
    * Retourne tout les recruteurs technique
-   * @param crenea
    * @returns SpecialisteTech[]
    */
   public findAll(): SpecialisteTech[] | undefined {
@@ -30,7 +29,7 @@ export default class SpecialisteTechServiceImpl
   /**
    * Retourne tout les recruteurs technique disponnible
    * pour un créneau donnée
-   * @param crenea
+   * @param creneau
    * @returns SpecialisteTech[]
    */
   public findAllAvailable(creneau: Creneau): SpecialisteTech[] | undefined {
@@ -40,7 +39,7 @@ export default class SpecialisteTechServiceImpl
   /**
    * Retourne tout les recruteurs technique disponnible
    * pour un créneau donnée et des compétences requises
-   * @param crenea
+   * @param creneau
    * @returns SpecialisteTech[]
    */
   public findAvailableByCompetences(

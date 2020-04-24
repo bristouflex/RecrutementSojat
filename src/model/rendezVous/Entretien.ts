@@ -1,8 +1,10 @@
-import ValueObjectID from "./model/ValueObjectID";
+import ValueObjectID from "../ValueObjectID";
 
 import Creneau from "./Creneau";
-import SpecialisteTech, { Competence } from "./model/specialisteTech/SpecialisteTech";
-import Candidat from "./model/candidat/Candidat";
+import SpecialisteTech, {
+  Competence,
+} from "../specialisteTech/SpecialisteTech";
+import Candidat from "../candidat/Candidat";
 
 export enum Status {
   Plannifie,
@@ -28,11 +30,10 @@ export default class Entretien extends ValueObjectID {
     public readonly candidat: Candidat,
     public readonly competence: Competence
   ) {
-      super()
-      if(!specialisteTech.competences.includes(competence)){
-        throw new Error("Le spécialiste ne peut pas mener l'entretien")
-      }
-      
+    super();
+    if (!specialisteTech.competences.includes(competence)) {
+      throw new Error("Le spécialiste ne peut pas mener l'entretien");
+    }
   }
 
   public confirmer() {
@@ -40,9 +41,7 @@ export default class Entretien extends ValueObjectID {
   }
 
   public annuler(raison: string) {
-    this._status = Status.Annule
+    this._status = Status.Annule;
     this._raisonAnnulation = raison;
   }
-
-
 }
