@@ -1,10 +1,9 @@
 import ValueObjectID from "../ValueObjectID";
 
 import Creneau from "./Creneau";
-import SpecialisteTech, {
-  Competence,
-} from "../specialisteTech/SpecialisteTech";
+import SpecialisteTech from "../specialisteTech/SpecialisteTech";
 import Candidat from "../candidat/Candidat";
+import { Competence } from "../Competence";
 
 export enum Status {
   Plannifie,

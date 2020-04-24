@@ -1,8 +1,7 @@
-import SpecialisteTech, {
-  Competence,
-} from "../model/specialisteTech/SpecialisteTech";
+import SpecialisteTech from "../model/specialisteTech/SpecialisteTech";
 import Creneau from "../model/rendezVous/Creneau";
 import { ISpecialisteTechRepository } from "../repository/ISpecialisteTechRepository";
+import { Competence } from "../model/Competence";
 
 export default class SpecialisteTechRepository
   implements ISpecialisteTechRepository {

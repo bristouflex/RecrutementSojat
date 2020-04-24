@@ -1,10 +1,5 @@
 import ValueObjectID from "../ValueObjectID";
-
-export enum Competence {
-  Java,
-  DotNet,
-  JS,
-}
+import { Competence } from "../Competence";
 
 export default class SpecialisteTech extends ValueObjectID {
   /**
