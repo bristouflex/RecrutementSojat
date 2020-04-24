@@ -23,6 +23,13 @@ export default class Entretien extends ValueObjectID {
     return this._raisonAnnulation;
   }
 
+  /**
+   * @param _status
+   * @param creneau
+   * @param specialisteTech
+   * @param candidat
+   * @param competence
+   */
   constructor(
     private _status: Status,
     public readonly creneau: Creneau,

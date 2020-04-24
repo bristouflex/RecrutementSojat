@@ -7,6 +7,11 @@ export enum Competence {
 }
 
 export default class SpecialisteTech extends ValueObjectID {
+  /**
+   * @param prenom
+   * @param nom
+   * @param competences
+   */
   constructor(
     public readonly prenom: string,
     public readonly nom: string,
