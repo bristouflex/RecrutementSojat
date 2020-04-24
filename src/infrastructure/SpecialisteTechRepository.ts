@@ -19,7 +19,7 @@ export default class SpecialisteTechRepository
    * @returns SpecialisteTech
    */
   public finById(id: number): SpecialisteTech {
-    return new SpecialisteTech("nom", "prenom", [Competence.JS]);
+    return new SpecialisteTech("nom", "prenom", [Competence.JS], 10);
   }
 
   /**

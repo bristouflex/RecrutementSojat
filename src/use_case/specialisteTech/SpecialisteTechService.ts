@@ -2,6 +2,7 @@ import SpecialisteTech from "../../model/specialisteTech/SpecialisteTech";
 import Creneau from "../../model/rendezVous/Creneau";
 import { ISpecialisteTechRepository } from "../../repository/ISpecialisteTechRepository";
 import { Competence } from "../../model/Competence";
+import Candidat from "model/candidat/Candidat";
 
 export default class SpecialisteTechService {
   constructor(public IspecialisteTechRepository: ISpecialisteTechRepository) {}
@@ -63,5 +64,24 @@ export default class SpecialisteTechService {
    */
   public deleteById(id: number): void {
     this.IspecialisteTechRepository.deleteById(id);
+  }
+
+  /**
+   * Vérifie si un recruteur à les compétences nécessaire pour faire
+   * passer un candidat en entretien
+   * @param competencesSpecialiste
+   * @param candidat
+   * @returns boolean
+   */
+  public canDoInterview(
+    competencesSpecialiste: Competence[],
+    candidat: Candidat
+  ): boolean {
+    candidat.competences.forEach((c) => {
+      if (competencesSpecialiste.includes(c)) {
+        return true;
+      }
+    });
+    return false;
   }
 }
